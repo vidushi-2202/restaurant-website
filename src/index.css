@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Poppins", sans-serif;
+  
+  /* Brand Theme Colors */
+  --color-gold-50: #fbf9f4;
+  --color-gold-100: #f4ecda;
+  --color-gold-200: #e7d8b5;
+  --color-gold-300: #d6be89;
+  --color-gold-400: #c29d5b;
+  --color-gold-500: #b0813f;
+  --color-gold-600: #936530;
+  --color-gold-700: #754c25;
+  --color-gold-800: #5d3b20;
+  --color-gold-900: #4c301c;
+  --color-gold-950: #2b1a0e;
+
+  --color-charcoal-50: #f6f6f6;
+  --color-charcoal-100: #e7e7e7;
+  --color-charcoal-200: #d1d1d1;
+  --color-charcoal-300: #b0b0b0;
+  --color-charcoal-400: #888888;
+  --color-charcoal-500: #6d6d6d;
+  --color-charcoal-600: #5d5d5d;
+  --color-charcoal-700: #4f4f4f;
+  --color-charcoal-800: #373737;
+  --color-charcoal-900: #1f1f1f;
+  --color-charcoal-950: #121212;
+
+  --color-luxury-cream: #faf7f2;
+  --color-luxury-black: #0b0b0b;
+  --color-luxury-dark: #121212;
+  --color-luxury-gold: #c5a880;
+  --color-luxury-gold-hover: #b3946a;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply transition-colors duration-500;
+  }
+  
+  /* Custom Scrollbar for Luxury Vibe */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0b0b0b;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #c5a880;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b3946a;
+  }
+
+  ::selection {
+    background-color: #c5a880;
+    color: #0b0b0b;
+  }
+}
+
+/* Glassmorphism Utilities */
+.glass-navbar {
+  background: rgba(11, 11, 11, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+}
+
+.glass-navbar-light {
+  background: rgba(250, 247, 242, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+}
+
+.glass-card {
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(197, 168, 128, 0.1);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(197, 168, 128, 0.15);
+}
+
+.text-stroke-gold {
+  -webkit-text-stroke: 1px rgba(197, 168, 128, 0.4);
+  color: transparent;
+}
+
+/* Custom Hide Scrollbar Utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
